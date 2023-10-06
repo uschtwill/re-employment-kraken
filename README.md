@@ -16,6 +16,7 @@
     - [Regarding Persistence/State](#regarding-persistencestate)
   - [Known Issues](#known-issues)
     - [Cloudflare Web Application Firewall (WAF)](#cloudflare-web-application-firewall-waf)
+    - [Cumbersome Search Engines](#cumbersome-search-engines)
 
 ## Features
 
@@ -39,8 +40,7 @@ I am a techie looking for a freelance gig (project) in the European/German marke
 - 🚫 ~~[Progressive Recruitment][progressive-recruitment]~~ (Cloudflare WAF, see _"Known Issues"_)
 - ✅ [Hays][hays]
 - ✅ [Darwin Recruitment][darwin-recruitment]
-- 🚫 ~~[WeMatch][etengo]~~ (no job portal)
-- 🚫 ~~[etengo][etengo]~~ (cumbersome search engine with lots of JS)
+- 🚫 ~~[etengo][etengo]~~ (cumbersome search engine, see _"Known Issues"_)
 - ✅ [Austin Fraser][austin-fraser]
 - ⏱️ [Computer Futures][computer-futures] _(coming soon)_
 - ⏱️ [Michael Page][michael-page] _(coming soon)_
@@ -68,7 +68,7 @@ Ideally, you should run `re-employment-kraken` on a server somewhere so it can k
 First though, you will probably want to write some strategies for your use case. Clone the repo:
 
 ```bash
-git clone XXXXXXX && cd XXXXX
+git clone git@github.com:uschtwill/re-employment-kraken.git && cd re-employment-kraken.git
 ```
 
 Install dependencies:
@@ -135,6 +135,10 @@ The 'database' is just a collection of `.txt` files in the `./database/` directo
 
 Some sites are protected from bots by technology like the Cloudflare WAF, which uses various measures to keep scrapers and crawlers out. There are some ways to sidestep protection like this, but it certainly complicates things and I am also not too sure about the legality of doing so.
 
+### Cumbersome Search Engines
+
+This crawler so far depends on search queries being settable via the URL path. It also helps if pagination is implemented in a standard way. Right now, from where I am standing, if it's a fancy search engine implementation, it's just not worth the time to write custom code just for that single case.
+
 <!-- Other Links -->
 
 [cheerio]: https://github.com/cheeriojs/cheerio
@@ -146,7 +150,6 @@ Some sites are protected from bots by technology like the Cloudflare WAF, which 
 [progressive-recruitment]: https://www.progressiverecruitment.com/de-de/
 [hays]: https://www.hays.de/en/jobsearch/job-offers
 [darwin-recruitment]: https://www.darwinrecruitment.de/search-jobs/#Job_Search_Section
-[we-match]: https://www.wematch.de/
 [etengo]: https://www.etengo.de/en/it-project-search/
 [austin-fraser]: https://www.austinfraser.com/de
 [computer-futures]: https://www.computerfutures.com/de-de/stellensuche/?keywords=javascript&country=Deutschland&searchRadius=50km
