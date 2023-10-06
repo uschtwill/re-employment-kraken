@@ -1,4 +1,5 @@
 .env
 database
 .personal-notes.md
+.linked-in-posts.md
 node_modules
