@@ -1,0 +1,21 @@
+{
+  "name": "re-employment-kraken",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "type": "module",
+  "scripts": {
+    "run": "node lib/index.js",
+    "nodemon": "./node_modules/.bin/nodemon lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1",
+    "node-notifier": "^10.0.1",
+    "nodemon": "^3.0.1"
+  }
+}
