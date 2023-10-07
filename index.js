@@ -1,6 +1,6 @@
 import { config } from "./config.js";
-import { fetchHTML } from "./lib/fetchHTML.js";
-import { processData } from "./lib/processData.js";
+import { fetch } from "./lib/fetch.js";
+import { process } from "./lib/process.js";
 
 const init = async (config) => {
   const { mode, strategies, queries } = config;
@@ -9,8 +9,8 @@ const init = async (config) => {
     for (const strategy of strategies) {
       if (strategy.enabled) {
         for (const query of queries) {
-          const htmlDocuments = await fetchHTML(strategy, query, config);
-          await processData(htmlDocuments, strategy, query, config);
+          const htmlDocuments = await fetch(strategy, query, config);
+          await process(htmlDocuments, strategy, query, config);
         }
       }
     }
