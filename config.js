@@ -50,36 +50,46 @@ export const config = {
   strategies: [
     {
       name: "Hays",
-      enabled: true,
+      enabled: false,
       url: "https://www.hays.de/en/jobsearch/job-offers/j/Contracting/3/p/1?q=$$$QUERY$$$&e=false&pt=false",
+      baseUrl: "https://www.hays.de",
       getters: {
         getSingleResult: ($) => $(".search__result__header__a"),
-        getTitle: ($, result) =>
+        getResultTitle: ($, result) =>
           $(result).find("h3.search__result__header__title span").text().trim(),
-        getHref: ($, result) => $(result).attr("href"),
+        getResultHref: ($, result) => $(result).attr("href"),
+        getNextPageHref: ($) =>
+          $(".search__results__pagination__next ").attr("href"),
       },
     },
     {
       name: "DarwinRecruitment",
-      enabled: true,
+      enabled: false,
       url: "https://www.darwinrecruitment.de/search-jobs/?_location=contract&_keywords=$$$QUERY$$$",
+      baseUrl: "https://www.darwinrecruitment.de",
       getters: {
         getSingleResult: ($) => $(".darwin_job_search_page_row"),
-        getTitle: ($, result) =>
+        getResultTitle: ($, result) =>
           $(result).find(".darwin_job_search_page_job_title").text().trim(),
-        getHref: ($, result) => $(result).parent().attr("href"),
+        getResultHref: ($, result) => $(result).parent().attr("href"),
+        getNextPageHref: ($) =>
+          $(".search__results__pagination__next ").attr("href"),
       },
     },
     {
       name: "AustinFraser",
       enabled: true,
       url: "https://www.austinfraser.com/de/jobangebote/contract?query=$$$QUERY$$$&selected_locations=&sort_type=relevance",
+      baseUrl: "https://www.austinfraser.com",
       getters: {
         getSingleResult: ($) => $(".job-result-item"),
-        getTitle: ($, result) => $(result).find(".job-title").text().trim(),
-        getHref: ($, result) => $(result).find(".job-title a").attr("href"),
+        getResultTitle: ($, result) =>
+          $(result).find(".job-title").text().trim(),
+        getResultHref: ($, result) =>
+          $(result).find(".job-title a").attr("href"),
+        getNextPageHref: ($) =>
+          $(".search__results__pagination__next ").attr("href"),
       },
-      baseUrl: "https://www.austinfraser.com",
     },
   ],
 };
