@@ -9,8 +9,8 @@ const init = async (config) => {
     for (const strategy of strategies) {
       if (strategy.enabled) {
         for (const query of queries) {
-          const data = await fetchHTML(strategy, query, config);
-          await processData(data, strategy, query, config);
+          const htmlDocuments = await fetchHTML(strategy, query, config);
+          await processData(htmlDocuments, strategy, query, config);
         }
       }
     }

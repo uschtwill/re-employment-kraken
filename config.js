@@ -50,21 +50,25 @@ export const config = {
   strategies: [
     {
       name: "Hays",
-      enabled: false,
-      url: "https://www.hays.de/en/jobsearch/job-offers/j/Contracting/3/p/1?q=$$$QUERY$$$&e=false&pt=false",
+      enabled: true,
+      url: "https://www.hays.de/en/jobsearch/job-offers/j/Contracting/3/p/1?q=$$$QUERY$$$",
       baseUrl: "https://www.hays.de",
       getters: {
         getSingleResult: ($) => $(".search__result__header__a"),
         getResultTitle: ($, result) =>
           $(result).find("h3.search__result__header__title span").text().trim(),
         getResultHref: ($, result) => $(result).attr("href"),
-        getNextPageHref: ($) =>
-          $(".search__results__pagination__next ").attr("href"),
+        getNextPageHref: ($) => {
+          const linkElement = $(".search__results__pagination__next");
+          return linkElement && !linkElement.attr("class").includes("disabled")
+            ? linkElement.attr("href")
+            : null;
+        },
       },
     },
     {
       name: "DarwinRecruitment",
-      enabled: false,
+      enabled: true,
       url: "https://www.darwinrecruitment.de/search-jobs/?_location=contract&_keywords=$$$QUERY$$$",
       baseUrl: "https://www.darwinrecruitment.de",
       getters: {
@@ -72,14 +76,13 @@ export const config = {
         getResultTitle: ($, result) =>
           $(result).find(".darwin_job_search_page_job_title").text().trim(),
         getResultHref: ($, result) => $(result).parent().attr("href"),
-        getNextPageHref: ($) =>
-          $(".search__results__pagination__next ").attr("href"),
+        getNextPageHref: ($) => false, // no html link, but JS click handler, not crawlable atm 🙄
       },
     },
     {
       name: "AustinFraser",
       enabled: true,
-      url: "https://www.austinfraser.com/de/jobangebote/contract?query=$$$QUERY$$$&selected_locations=&sort_type=relevance",
+      url: "https://www.austinfraser.com/de/jobangebote/contract?query=$$$QUERY$$$",
       baseUrl: "https://www.austinfraser.com",
       getters: {
         getSingleResult: ($) => $(".job-result-item"),
@@ -87,8 +90,7 @@ export const config = {
           $(result).find(".job-title").text().trim(),
         getResultHref: ($, result) =>
           $(result).find(".job-title a").attr("href"),
-        getNextPageHref: ($) =>
-          $(".search__results__pagination__next ").attr("href"),
+        getNextPageHref: ($) => $("span.next").find("a").attr("href"),
       },
     },
   ],

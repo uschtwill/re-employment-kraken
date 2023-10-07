@@ -18,12 +18,14 @@
   - [Known Issues](#known-issues)
     - [Cloudflare Web Application Firewall (WAF)](#cloudflare-web-application-firewall-waf)
     - [Cumbersome Search Engines](#cumbersome-search-engines)
+    - [Search Results not Crawlable](#search-results-not-crawlable)
   - [Links](#links)
 
 ## Features
 
 - Scrape search results from multiple websites via different 'strategies'
 - Able to use multiple search queries
+- Handles pagination of search results (if crawlable)
 - Keeps track of what it has seen (helpfully brings its own 'database')
 - Sends notifications to:
   - `stdout`
@@ -44,7 +46,7 @@ I am a techie looking for a freelance gig (project) in the European/German marke
 
 - 🚫 ~~[Progressive Recruitment][progressive-recruitment]~~ (Cloudflare WAF, see [_"Known Issues"_](#known-issues))
 - ✅ [Hays][hays]
-- ✅ [Darwin Recruitment][darwin-recruitment]
+- ⚠️ [Darwin Recruitment][darwin-recruitment] (results not crawlable, see [_"Known Issues"_](#known-issues))
 - 🚫 ~~[etengo][etengo]~~ (cumbersome search engine, see [_"Known Issues"_](#known-issues))
 - ✅ [Austin Fraser][austin-fraser]
 - ⏱️ [Computer Futures][computer-futures] _(coming soon)_
@@ -147,6 +149,12 @@ Some sites are protected from bots by technology like the Cloudflare WAF, which 
 ### Cumbersome Search Engines
 
 This crawler so far depends on search queries being settable via the URL path. It also helps if pagination is implemented in a standard way. Right now, from where I am standing, if it's a fancy search engine implementation, it's just not worth the time to write custom code just for that single case.
+
+### Search Results not Crawlable
+
+Some sites implement search result pagination in a non standard way. One such example is a site injecting the URL while running the click handler when clicking the "next page" button instead of just using a standard html link. This would need some extra effort to account for. Not today.
+
+In this case `re-employment-kraken` will only fetch the results from the first page. Depending on how narrow or broad the search queries are, this may or may not be a problem.
 
 ## Links
 
