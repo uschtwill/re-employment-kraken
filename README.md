@@ -14,6 +14,7 @@
     - [Operations](#operations)
   - [Miscellaneous](#miscellaneous)
     - [Regarding Persistence/State](#regarding-persistencestate)
+    - [Setting up Notion Integration](#setting-up-notion-integration)
   - [Known Issues](#known-issues)
     - [Cloudflare Web Application Firewall (WAF)](#cloudflare-web-application-firewall-waf)
     - [Cumbersome Search Engines](#cumbersome-search-engines)
@@ -128,6 +129,10 @@ You'll figure it out. 😅
 ### Regarding Persistence/State
 
 The 'database' is just a collection of `.txt` files in the `./database/` directory in the repository root (one per strategy).
+
+### Setting up Notion Integration
+
+See [this standalone document](docs/setting-up-notion-integration.md) for guidance on how to set up the Notion integration.
 
 ## Known Issues
 
