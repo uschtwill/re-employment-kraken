@@ -18,6 +18,7 @@
   - [Known Issues](#known-issues)
     - [Cloudflare Web Application Firewall (WAF)](#cloudflare-web-application-firewall-waf)
     - [Cumbersome Search Engines](#cumbersome-search-engines)
+  - [Links](#links)
 
 ## Features
 
@@ -41,10 +42,10 @@ I am a freelancer looking for a new project, and I realised that cycling through
 
 I am a techie looking for a freelance gig (project) in the European/German market, so this is why I picked these sites. So, so far there are strategies to scrape the following recruitment companies' job sites.
 
-- 🚫 ~~[Progressive Recruitment][progressive-recruitment]~~ (Cloudflare WAF, see _"Known Issues"_)
+- 🚫 ~~[Progressive Recruitment][progressive-recruitment]~~ (Cloudflare WAF, see [_"Known Issues"_](#known-issues))
 - ✅ [Hays][hays]
 - ✅ [Darwin Recruitment][darwin-recruitment]
-- 🚫 ~~[etengo][etengo]~~ (cumbersome search engine, see _"Known Issues"_)
+- 🚫 ~~[etengo][etengo]~~ (cumbersome search engine, see [_"Known Issues"_](#known-issues))
 - ✅ [Austin Fraser][austin-fraser]
 - ⏱️ [Computer Futures][computer-futures] _(coming soon)_
 - ⏱️ [Michael Page][michael-page] _(coming soon)_
@@ -91,7 +92,7 @@ Basically you just have to inspect the source code of the site you want to scrap
 
 Specifically you are interested in the HTML making up a single search result.
 
-The CSS selector identifying one of these goes into the `getSingleResult` function. Furthermore you will need to specify selectors to get the title (`getTitle`) and the link to the detail page of that result (`getHref`).
+The CSS selector identifying one of these goes into the `getSingleResult` function. Furthermore you will need to specify selectors to get the title (`getResultTitle`) and the link to the detail page of that result (`getResultHref`).
 
 `re-employment-kraken` uses the [`cheerio`][cheerio] package to scrape the HTML and anything related to the DOM, so for some more involved cases it can be useful to check out their docs ([_"Traversing the DOM"_][cheerio-docs]).
 
@@ -135,7 +136,7 @@ The 'database' is just a collection of `.txt` files in the `./database/` directo
 
 ### Setting up the Notion Integration
 
-See [this standalone document](docs/setting-up-notion-integration.md) for guidance on how to set up the Notion integration.
+See [this standalone document](docs/setting-up-notion-integration.md) for guidance on how to set up the Notion integration. If you want to customize your Notion integration (other properties etc), have a look at the [_"Links"_](#links) section below.
 
 ## Known Issues
 
@@ -147,11 +148,25 @@ Some sites are protected from bots by technology like the Cloudflare WAF, which 
 
 This crawler so far depends on search queries being settable via the URL path. It also helps if pagination is implemented in a standard way. Right now, from where I am standing, if it's a fancy search engine implementation, it's just not worth the time to write custom code just for that single case.
 
+## Links
+
+- **Notion Docs**
+  - [Adding pages to a database][notion-adding-pages]
+  - [Create a page (via the API)][notion-create-page]
+  - [Database properties][notion-database-properties]
+  - [Property values][notion-property-values]
+  - [Retrieve a database (via the API; helpful to see properties)][notion-retrieve-database]
+
 <!-- Other Links -->
 
 [cheerio]: https://github.com/cheeriojs/cheerio
 [cheerio-docs]: https://cheerio.js.org/docs/basics/traversing
 [crontab-guru]: https://crontab.guru/
+[notion-adding-pages]: https://developers.notion.com/docs/working-with-databases#adding-pages-to-a-database
+[notion-create-page]: https://developers.notion.com/reference/post-page
+[notion-database-properties]: https://developers.notion.com/reference/property-object
+[notion-property-values]: https://developers.notion.com/reference/property-value-object
+[notion-retrieve-database]: https://developers.notion.com/reference/retrieve-a-database
 
 <!-- Recruiter Links -->
 
