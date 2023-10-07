@@ -64,7 +64,7 @@ Open your `.env` file, set `NOTION_BOARD_ID` and `NOTION_AUTH_TOKEN` using the v
 
 That's it, you're done. `re-employment-kraken` should now create entries on your Notion board.
 
-Feel free to add more properties to your database/entries via the UI and create as many different status columns as you need for your process/funnel.
+Feel free to add more properties to your database/entries via the UI and create as many different status columns as you need for your process/funnel. And of course you can also just add cards to the board yourself manually.
 
 <!-- Links -->
 

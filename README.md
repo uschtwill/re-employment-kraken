@@ -1,6 +1,6 @@
 # 🐙 re-employment-kraken
 
-`re-employment-kraken` is a web scraper that scrapes (job) sites, remembers what it saw and notifies downstream systems of any new sightings.
+`re-employment-kraken` scrapes (job) sites, remembers what it saw and notifies downstream systems of any new sightings.
 
 ## Table of Content
 
@@ -116,10 +116,10 @@ Open your `crontab` with:
 crontab -e
 ```
 
-Copy paste this in there, but change the paths accordingly.
+Copy paste this in there, but change the path accordingly.
 
 ```bash
-* * * * * node /absolute/path/to/this/directory/index.js >> /absolute/path/to/this/directory/cron.log 2>&1
+* * * * * cd /absolute/path/to/the/directory && node index.js >> cron.log 2>&1
 ```
 
 Quick explanation: `* * * * *` makes it run every minute, see [cron syntax][crontab-guru]. And `>> cron.log 2>&1` logs both `stdout` and `stderr` to the `cron.log` file.
