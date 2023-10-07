@@ -14,23 +14,26 @@
     - [Operations](#operations)
   - [Miscellaneous](#miscellaneous)
     - [Regarding Persistence/State](#regarding-persistencestate)
-    - [Setting up Notion Integration](#setting-up-notion-integration)
+    - [Setting up the Notion Integration](#setting-up-the-notion-integration)
   - [Known Issues](#known-issues)
     - [Cloudflare Web Application Firewall (WAF)](#cloudflare-web-application-firewall-waf)
     - [Cumbersome Search Engines](#cumbersome-search-engines)
 
 ## Features
 
-- Can scrape search results from multiple websites via different 'strategies'
+- Scrape search results from multiple websites via different 'strategies'
 - Able to use multiple search queries
 - Keeps track of what it has seen (helpfully brings its own 'database')
-- Can send notifications to:
+- Sends notifications to:
   - `stdout`
   - Your Mac OS notification center
   - Slack
-  - E-Mail _(coming soon)_
+  - E-Mail _(not yet implemented, good first issue)_
+- Creates cards on Kanban boards in:
+  - Notion
+  - Trello _(not yet implemented, good first issue)_
+  - Jira _(not yet implemented, good first issue)_
 - Runs anywhere you can run Node.js and `cron` jobs
-- Creates cards on a Notion board _(coming soon)_
 
 ## Background
 
@@ -130,7 +133,7 @@ You'll figure it out. 😅
 
 The 'database' is just a collection of `.txt` files in the `./database/` directory in the repository root (one per strategy).
 
-### Setting up Notion Integration
+### Setting up the Notion Integration
 
 See [this standalone document](docs/setting-up-notion-integration.md) for guidance on how to set up the Notion integration.
 
