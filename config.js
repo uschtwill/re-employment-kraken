@@ -60,7 +60,8 @@ export const config = {
         getResultHref: ($, result) => $(result).attr("href"),
         getNextPageHref: ($) => {
           const linkElement = $(".search__results__pagination__next");
-          return linkElement && !linkElement.attr("class").includes("disabled")
+          return linkElement &&
+            !linkElement?.attr("class")?.includes("disabled")
             ? linkElement.attr("href")
             : null;
         },
