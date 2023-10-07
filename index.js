@@ -1,6 +1,6 @@
 import { config } from "./config.js";
-import { fetchHTML } from "./lib/http.js";
-import { processData } from "./lib/process.js";
+import { fetchHTML } from "./lib/fetchHTML.js";
+import { processData } from "./lib/processData.js";
 
 const init = async (config) => {
   const { mode, strategies, queries } = config;
