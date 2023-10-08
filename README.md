@@ -31,11 +31,11 @@
   - `stdout`
   - Your Mac OS notification center
   - Slack
-  - E-Mail _(not yet implemented, good first issue)_
+  - E-Mail _(not yet implemented, good first issue, see <https://github.com/uschtwill/re-employment-kraken/issues/3>)_
 - Creates cards on Kanban boards in:
   - Notion
-  - Trello _(not yet implemented, good first issue)_
-  - Jira _(not yet implemented, good first issue)_
+  - Trello _(not yet implemented, good first issue, see <https://github.com/uschtwill/re-employment-kraken/issues/2>)_
+  - Jira _(not yet implemented, good first issue, see <https://github.com/uschtwill/re-employment-kraken/issues/1>)_
 - Runs anywhere you can run Node.js and `cron` jobs
 
 ## Background
@@ -49,7 +49,7 @@ I am a techie looking for a freelance gig (project) in the European/German marke
 - ⚠️ [Darwin Recruitment][darwin-recruitment] (results not crawlable, see [_"Known Issues"_](#known-issues))
 - 🚫 ~~[etengo][etengo]~~ (cumbersome search engine, see [_"Known Issues"_](#known-issues))
 - ✅ [Austin Fraser][austin-fraser]
-- 🚫 [Computer Futures][computer-futures] ~~(Cloudflare WAF, see [_"Known Issues"_](#known-issues))~~
+- 🚫 ~~[Computer Futures][computer-futures]~~ (Cloudflare WAF, see [_"Known Issues"_](#known-issues))
 - ✅ [Michael Page][michael-page]
 - ⏱️ [Constaff][constaff] _(coming soon)_
 - ⏱️ [Krongaard][krongaard] _(coming soon)_
@@ -145,6 +145,8 @@ See [this standalone document](docs/setting-up-notion-integration.md) for guidan
 ### Cloudflare Web Application Firewall (WAF)
 
 Some sites are protected from bots by technology like the Cloudflare WAF, which uses various measures to keep scrapers and crawlers out. There are some ways to sidestep protection like this, but it certainly complicates things and I am also not too sure about the legality of doing so.
+
+See <https://github.com/uschtwill/re-employment-kraken/issues/4>
 
 ### Cumbersome Search Engines
 
