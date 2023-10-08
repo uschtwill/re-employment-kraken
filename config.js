@@ -53,6 +53,7 @@ export const config = {
       enabled: true,
       url: "https://www.hays.de/en/jobsearch/job-offers/j/Contracting/3/p/1?q=$$$QUERY$$$",
       baseUrl: "https://www.hays.de",
+      zeroResultsYields404: false,
       getters: {
         getSingleResult: ($) => $(".search__result__header__a"),
         getResultTitle: ($, result) =>
@@ -72,6 +73,7 @@ export const config = {
       enabled: true,
       url: "https://www.darwinrecruitment.de/search-jobs/?_location=contract&_keywords=$$$QUERY$$$",
       baseUrl: "https://www.darwinrecruitment.de",
+      zeroResultsYields404: false,
       getters: {
         getSingleResult: ($) => $(".darwin_job_search_page_row"),
         getResultTitle: ($, result) =>
@@ -85,6 +87,7 @@ export const config = {
       enabled: true,
       url: "https://www.austinfraser.com/de/jobangebote/contract?query=$$$QUERY$$$",
       baseUrl: "https://www.austinfraser.com",
+      zeroResultsYields404: false,
       getters: {
         getSingleResult: ($) => $(".job-result-item"),
         getResultTitle: ($, result) =>
@@ -92,6 +95,19 @@ export const config = {
         getResultHref: ($, result) =>
           $(result).find(".job-title a").attr("href"),
         getNextPageHref: ($) => $("span.next").find("a").attr("href"),
+      },
+    },
+    {
+      name: "MichaelPage",
+      enabled: true,
+      url: "https://www.michaelpage.de/jobs/$$$QUERY$$$?contract=temp",
+      baseUrl: "https://www.michaelpage.de",
+      zeroResultsYields404: true,
+      getters: {
+        getSingleResult: ($) => $(".views-row"),
+        getResultTitle: ($, result) => $(result).find("a").text().trim(),
+        getResultHref: ($, result) => $(result).find("a").attr("href"),
+        getNextPageHref: ($) => false,
       },
     },
   ],

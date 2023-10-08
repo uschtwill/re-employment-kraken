@@ -49,8 +49,8 @@ I am a techie looking for a freelance gig (project) in the European/German marke
 - ⚠️ [Darwin Recruitment][darwin-recruitment] (results not crawlable, see [_"Known Issues"_](#known-issues))
 - 🚫 ~~[etengo][etengo]~~ (cumbersome search engine, see [_"Known Issues"_](#known-issues))
 - ✅ [Austin Fraser][austin-fraser]
-- ⏱️ [Computer Futures][computer-futures] _(coming soon)_
-- ⏱️ [Michael Page][michael-page] _(coming soon)_
+- 🚫 [Computer Futures][computer-futures] ~~(Cloudflare WAF, see [_"Known Issues"_](#known-issues))~~
+- ✅ [Michael Page][michael-page]
 - ⏱️ [Constaff][constaff] _(coming soon)_
 - ⏱️ [Krongaard][krongaard] _(coming soon)_
 - ⏱️ [Amoria Bond][amoria-bond] _(coming soon)_
