@@ -105,7 +105,8 @@ export const config = {
       zeroResultsYields404: true,
       getters: {
         getSingleResult: ($) => $(".views-row"),
-        getResultTitle: ($, result) => $(result).find("a").text().trim(),
+        getResultTitle: ($, result) =>
+          $(result).find("a").text().trim().replace(" Job ansehen", ""),
         getResultHref: ($, result) => $(result).find("a").attr("href"),
         getNextPageHref: ($) => false,
       },
