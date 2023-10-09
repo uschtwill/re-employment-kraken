@@ -119,8 +119,10 @@ export const config = {
       zeroResultsYields404: false,
       getters: {
         getSingleResult: ($) => $(".project-container.project.card.box"),
-        getResultTitle: ($, result) => $(result).find("h3 a").text().trim(),
-        getResultHref: ($, result) => $(result).find("h3 a").attr("href"),
+        getResultTitle: ($, result) =>
+          $(result).find("h3 a.project-title").text().trim(),
+        getResultHref: ($, result) =>
+          $(result).find("h3 a.project-title").attr("href"),
         getNextPageHref: ($) => $("a.next").attr("href"),
       },
     },
