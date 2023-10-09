@@ -13,6 +13,7 @@ export const config = {
   database: {
     enabled: process.env.DATABASE_ENABLED === "true",
   },
+  alreadySeenHrefs: [],
   fetchConfig: {
     headers: {
       "User-Agent":
