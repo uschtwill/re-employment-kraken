@@ -114,7 +114,7 @@ export const config = {
     {
       name: "FreelancerMap",
       enabled: true,
-      url: "https://www.freelancermap.de/projektboerse.html?query=devops&projectContractTypes%5B0%5D=contracting&created=20",
+      url: "https://www.freelancermap.de/projektboerse.html?query=$$$QUERY$$$&projectContractTypes%5B0%5D=contracting&created=20",
       baseUrl: "https://www.freelancermap.de",
       zeroResultsYields404: false,
       getters: {
