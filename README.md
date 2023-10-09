@@ -51,6 +51,7 @@ I am a techie looking for a freelance gig (project) in the European/German marke
 - ✅ [Austin Fraser][austin-fraser]
 - 🚫 ~~[Computer Futures][computer-futures]~~ (Cloudflare WAF, see [_"Known Issues"_](#known-issues))
 - ✅ [Michael Page][michael-page]
+- ✅ [freelancermap.de][freelancermap-de]
 - ⏱️ [Constaff][constaff] _(coming soon)_
 - ⏱️ [Krongaard][krongaard] _(coming soon)_
 - ⏱️ [Amoria Bond][amoria-bond] _(coming soon)_
@@ -180,13 +181,14 @@ In this case `re-employment-kraken` will only fetch the results from the first p
 
 <!-- Recruiter Links -->
 
-[progressive-recruitment]: https://www.progressiverecruitment.com/de-de/
+[progressive-recruitment]: https://www.progressiverecruitment.com/de-de/job-search/
 [hays]: https://www.hays.de/en/jobsearch/job-offers
-[darwin-recruitment]: https://www.darwinrecruitment.de/search-jobs/#Job_Search_Section
+[darwin-recruitment]: https://www.darwinrecruitment.de/search-jobs
 [etengo]: https://www.etengo.de/en/it-project-search/
-[austin-fraser]: https://www.austinfraser.com/de
-[computer-futures]: https://www.computerfutures.com/de-de/stellensuche/?keywords=javascript&country=Deutschland&searchRadius=50km
-[michael-page]: https://www.michaelpage.de/jobs/javascript?check_logged_in=1
+[austin-fraser]: https://www.austinfraser.com/de/jobangebote
+[computer-futures]: https://www.computerfutures.com/de-de/stellensuche
+[michael-page]: https://www.michaelpage.de/jobs
+[freelancermap-de]: https://www.freelancermap.de/projektboerse.html
 [constaff]: https://www.constaff.com/projektportal/
 [krongaard]: https://www.krongaard.de/experts/projektmarkt
 [amoria-bond]: https://www.amoriabond.com/de/job-search/
