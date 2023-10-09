@@ -111,5 +111,18 @@ export const config = {
         getNextPageHref: ($) => false,
       },
     },
+    {
+      name: "FreelancerMap",
+      enabled: true,
+      url: "https://www.freelancermap.de/projektboerse.html?query=devops&projectContractTypes%5B0%5D=contracting&created=20",
+      baseUrl: "https://www.freelancermap.de",
+      zeroResultsYields404: false,
+      getters: {
+        getSingleResult: ($) => $(".project-container.project.card.box"),
+        getResultTitle: ($, result) => $(result).find("h3 a").text().trim(),
+        getResultHref: ($, result) => $(result).find("h3 a").attr("href"),
+        getNextPageHref: ($) => $("a.next").attr("href"),
+      },
+    },
   ],
 };
