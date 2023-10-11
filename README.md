@@ -44,22 +44,22 @@ I am a freelancer looking for a new project, and I realised that cycling through
 
 I am a techie looking for a freelance gig (project) in the European/German market, so this is why I picked these sites. So, so far there are strategies to scrape the following recruitment companies' job sites.
 
-- 🚫 ~~[Progressive Recruitment][progressive-recruitment]~~ (Cloudflare WAF, see [_"Known Issues"_](#known-issues))
-- ✅ [Hays][hays]
-- ⚠️ [Darwin Recruitment][darwin-recruitment] (results not crawlable, see [_"Known Issues"_](#known-issues))
-- 🚫 ~~[etengo][etengo]~~ (cumbersome search engine, see [_"Known Issues"_](#known-issues))
-- ✅ [Austin Fraser][austin-fraser]
-- 🚫 ~~[Computer Futures][computer-futures]~~ (Cloudflare WAF, see [_"Known Issues"_](#known-issues))
-- ✅ [Michael Page][michael-page]
 - ✅ [freelancermap.de][freelancermap-de]
 - ✅ [freelance.de][freelance-de]
-- ⏱️ [SOLCOM][solcom]
+- ✅ [Hays][hays]
+- ✅ [Michael Page][michael-page]
+- ✅ [Austin Fraser][austin-fraser]
+- ⚠️ [Darwin Recruitment][darwin-recruitment] (results not crawlable, see [_"Known Issues"_](#known-issues))
+- ⏱️ [SOLCOM][solcom] _(coming soon)_
 - ⏱️ [Constaff][constaff] _(coming soon)_
 - ⏱️ [Krongaard][krongaard] _(coming soon)_
 - ⏱️ [Amoria Bond][amoria-bond] _(coming soon)_
 - ⏱️ [Gulp][gulp] _(coming soon)_
 - ⏱️ [Avantgarde Experts][avantgarde-experts] _(coming soon)_
 - ⏱️ [top itservices][top-itservices] _(coming soon)_
+- 🚫 ~~[Progressive Recruitment][progressive-recruitment]~~ (Cloudflare WAF, see [_"Known Issues"_](#known-issues))
+- 🚫 ~~[Computer Futures][computer-futures]~~ (Cloudflare WAF, see [_"Known Issues"_](#known-issues))
+- 🚫 ~~[etengo][etengo]~~ (cumbersome search engine, see [_"Known Issues"_](#known-issues))
 
 Of course you can use it to scrape other sites too, because your situation may be different and these sites may not be useful to you. Just get a friend who has some dev chops to help you write some strategies - it's really easy, I promise!
 
