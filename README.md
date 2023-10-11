@@ -52,6 +52,8 @@ I am a techie looking for a freelance gig (project) in the European/German marke
 - 🚫 ~~[Computer Futures][computer-futures]~~ (Cloudflare WAF, see [_"Known Issues"_](#known-issues))
 - ✅ [Michael Page][michael-page]
 - ✅ [freelancermap.de][freelancermap-de]
+- ✅ [freelance.de][freelance-de]
+- ⏱️ [SOLCOM][solcom]
 - ⏱️ [Constaff][constaff] _(coming soon)_
 - ⏱️ [Krongaard][krongaard] _(coming soon)_
 - ⏱️ [Amoria Bond][amoria-bond] _(coming soon)_
@@ -189,6 +191,8 @@ In this case `re-employment-kraken` will only fetch the results from the first p
 [computer-futures]: https://www.computerfutures.com/de-de/stellensuche
 [michael-page]: https://www.michaelpage.de/jobs
 [freelancermap-de]: https://www.freelancermap.de/projektboerse.html
+[freelance-de]: https://freelance.de
+[solcom]: https://solcom.de
 [constaff]: https://www.constaff.com/projektportal/
 [krongaard]: https://www.krongaard.de/experts/projektmarkt
 [amoria-bond]: https://www.amoriabond.com/de/job-search/
