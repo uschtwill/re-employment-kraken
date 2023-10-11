@@ -51,7 +51,7 @@ export const config = {
   strategies: [
     {
       name: "Hays",
-      enabled: false,
+      enabled: true,
       url: "https://www.hays.de/en/jobsearch/job-offers/j/Contracting/3/p/1?q=$$$QUERY$$$",
       baseUrl: "https://www.hays.de",
       zeroResultsYields404: false,
@@ -71,7 +71,7 @@ export const config = {
     },
     {
       name: "DarwinRecruitment",
-      enabled: false,
+      enabled: true,
       url: "https://www.darwinrecruitment.de/search-jobs/?_location=contract&_keywords=$$$QUERY$$$",
       baseUrl: "https://www.darwinrecruitment.de",
       zeroResultsYields404: false,
@@ -85,7 +85,7 @@ export const config = {
     },
     {
       name: "AustinFraser",
-      enabled: false,
+      enabled: true,
       url: "https://www.austinfraser.com/de/jobangebote/contract?query=$$$QUERY$$$",
       baseUrl: "https://www.austinfraser.com",
       zeroResultsYields404: false,
@@ -100,7 +100,7 @@ export const config = {
     },
     {
       name: "MichaelPage",
-      enabled: false,
+      enabled: true,
       url: "https://www.michaelpage.de/jobs/$$$QUERY$$$?contract=temp",
       baseUrl: "https://www.michaelpage.de",
       zeroResultsYields404: true,
@@ -114,7 +114,7 @@ export const config = {
     },
     {
       name: "FreelancerMap",
-      enabled: false,
+      enabled: true,
       url: "https://www.freelancermap.de/projektboerse.html?query=$$$QUERY$$$&projectContractTypes%5B0%5D=contracting&created=20",
       baseUrl: "https://www.freelancermap.de",
       zeroResultsYields404: false,
