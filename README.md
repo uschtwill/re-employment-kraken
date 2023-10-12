@@ -17,6 +17,8 @@
     - [Setting up the Notion Integration](#setting-up-the-notion-integration)
   - [Known Issues](#known-issues)
     - [Cloudflare Web Application Firewall (WAF)](#cloudflare-web-application-firewall-waf)
+    - [Requires JS to Run](#requires-js-to-run)
+    - [Search Query not Settable via URL Path](#search-query-not-settable-via-url-path)
     - [Cumbersome Search Engines](#cumbersome-search-engines)
     - [Search Results not Crawlable](#search-results-not-crawlable)
   - [Links](#links)
@@ -49,14 +51,13 @@ I am a techie looking for a freelance gig (project) in the European/German marke
 - ✅ [Hays][hays]
 - ✅ [Michael Page][michael-page]
 - ✅ [Austin Fraser][austin-fraser]
+- ✅ [top itservices][top-itservices]
 - ⚠️ [Darwin Recruitment][darwin-recruitment] (results not crawlable, see [_"Known Issues"_](#known-issues))
-- ⏱️ [SOLCOM][solcom] _(coming soon)_
-- ⏱️ [Constaff][constaff] _(coming soon)_
-- ⏱️ [Krongaard][krongaard] _(coming soon)_
-- ⏱️ [Amoria Bond][amoria-bond] _(coming soon)_
-- ⏱️ [Gulp][gulp] _(coming soon)_
-- ⏱️ [Avantgarde Experts][avantgarde-experts] _(coming soon)_
-- ⏱️ [top itservices][top-itservices] _(coming soon)_
+- 🚫 ~~[xing][xing]~~ (requires JS to run, see [_"Known Issues"_](#known-issues))
+- 🚫 ~~[SOLCOM][solcom]~~ (search query not settbale via URL path, see [_"Known Issues"_](#known-issues))
+- 🚫 ~~[Constaff][constaff]~~ (search query not settbale via URL path, see [_"Known Issues"_](#known-issues))
+- 🚫 ~~[Gulp][gulp]~~ (requires JS to run, see [_"Known Issues"_](#known-issues))
+- 🚫 ~~[Avantgarde Experts][avantgarde-experts]~~ (WAF, see [_"Known Issues"_](#known-issues))
 - 🚫 ~~[Progressive Recruitment][progressive-recruitment]~~ (Cloudflare WAF, see [_"Known Issues"_](#known-issues))
 - 🚫 ~~[Computer Futures][computer-futures]~~ (Cloudflare WAF, see [_"Known Issues"_](#known-issues))
 - 🚫 ~~[etengo][etengo]~~ (cumbersome search engine, see [_"Known Issues"_](#known-issues))
@@ -151,6 +152,14 @@ Some sites are protected from bots by technology like the Cloudflare WAF, which 
 
 See <https://github.com/uschtwill/re-employment-kraken/issues/4>
 
+### Requires JS to Run
+
+Some sites need JS to be enabled to work properly. Solution could be the same as for WAFs, see <https://github.com/uschtwill/re-employment-kraken/issues/4>.
+
+### Search Query not Settable via URL Path
+
+For some sites the search query can not be set via the URL path.
+
 ### Cumbersome Search Engines
 
 This crawler so far depends on search queries being settable via the URL path. It also helps if pagination is implemented in a standard way. Right now, from where I am standing, if it's a fancy search engine implementation, it's just not worth the time to write custom code just for that single case.
@@ -159,7 +168,7 @@ This crawler so far depends on search queries being settable via the URL path. I
 
 Some sites implement search result pagination in a non standard way. One such example is a site injecting the URL while running the click handler when clicking the "next page" button instead of just using a standard html link. This would need some extra effort to account for. Not today.
 
-In this case `re-employment-kraken` will only fetch the results from the first page. Depending on how narrow or broad the search queries are, this may or may not be a problem.
+In this case `re-employment-kraken` will only fetch the results from the first page. Depending on how narrow or broad the search queries are, and how often you crawl, this may or may not be a problem.
 
 ## Links
 
@@ -194,8 +203,7 @@ In this case `re-employment-kraken` will only fetch the results from the first p
 [freelance-de]: https://freelance.de
 [solcom]: https://solcom.de
 [constaff]: https://www.constaff.com/projektportal/
-[krongaard]: https://www.krongaard.de/experts/projektmarkt
-[amoria-bond]: https://www.amoriabond.com/de/job-search/
 [gulp]: https://www.gulp.de/job-projektboerse
 [avantgarde-experts]: https://www.avantgarde-experts.de/de/jobangebote/
 [top-itservices]: https://www.top-itservices.com/annoncen
+[xing]: https://www.xing.com/jobs/search?employmentType=CONTRACTOR.0ed397&keywords=javascript&sort=date
