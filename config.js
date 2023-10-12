@@ -1,7 +1,5 @@
 import { Client } from "@notionhq/client";
-
-import { loadScrapingStrategies } from "./lib/utils.js";
-
+import { loadStrategies } from "./lib/utils.js";
 import "dotenv/config";
 
 const notionClient = new Client({
@@ -10,11 +8,13 @@ const notionClient = new Client({
 
 const enabledScrapingStrategies =
   process.env.ENABLED_SCRAPING_STRATEGIES.split(",");
-const loadedStrategies = await loadScrapingStrategies();
+
+const loadedScrapingStrategies = await loadStrategies("scraping");
+const loadedNotificationStrategies = await loadStrategies("notification");
 
 export const config = {
   queries: process.env.QUERIES.split(","),
-  strategies: loadedStrategies.filter((strategy) =>
+  scrapingStrategies: loadedScrapingStrategies.filter((strategy) =>
     enabledScrapingStrategies.includes(strategy.name)
   ),
   debug: process.env.DEBUG === "true",
@@ -30,17 +30,16 @@ export const config = {
     },
     logResponse: process.env.LOG_HTTP_RESPONSE === "true",
   },
-  notifications: {
-    consoleLog: {
+  notificationStrategies: loadedNotificationStrategies,
+  notificationOptions: {
+    "console-log": {
       enabled: process.env.CONSOLELOG_ENABLED === "true",
     },
-    macOSNotifier: {
+    "mac-os-notifier": {
       enabled: process.env.MACOSNOTIFIER_ENABLED === "true",
-      options: {
-        title: "re-employment-kraken",
-        subtitle: "There are new jobs!",
-        sound: "Hero",
-      },
+      title: "re-employment-kraken",
+      subtitle: "There are new jobs!",
+      sound: "Hero",
     },
     slack: {
       enabled: process.env.SLACK_ENABLED === "true",
