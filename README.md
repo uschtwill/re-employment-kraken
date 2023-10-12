@@ -102,7 +102,7 @@ The CSS selector identifying one of these goes into the `getSingleResult` functi
 
 `re-employment-kraken` uses the [`cheerio`][cheerio] package to scrape the HTML and anything related to the DOM, so for some more involved cases it can be useful to check out their docs ([_"Traversing the DOM"_][cheerio-docs]).
 
-But just having a look at the existing strategies should give you a good idea of what is possible and how to get started. Suffice to say, that these getters are just normal functions, so you can do pretty much anything in there.
+But just having a look at the [example](./lib/strategies/scraping/blueprint.example.js) and the [existing strategies](./lib/strategies/scraping/) should give you a good idea of what is possible and how to get started. Suffice to say, that these getters are just normal functions, so you can do pretty much anything in there.
 
 ### Operations
 
