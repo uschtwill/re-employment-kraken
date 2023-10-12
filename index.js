@@ -4,14 +4,11 @@ import { process } from "./lib/process.js";
 
 const init = async (config) => {
   const { mode, strategies, queries } = config;
-
   if (mode === "sequential") {
     for (const strategy of strategies) {
-      if (strategy.enabled) {
-        for (const query of queries) {
-          const htmlDocuments = await fetch(strategy, query, config);
-          await process(htmlDocuments, strategy, query, config);
-        }
+      for (const query of queries) {
+        const htmlDocuments = await fetch(strategy, query, config);
+        await process(htmlDocuments, strategy, query, config);
       }
     }
   } else if (mode === "parallel") {
