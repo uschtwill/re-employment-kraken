@@ -1,21 +1,21 @@
-import { Client } from "@notionhq/client";
-import { loadStrategies } from "./lib/utils.js";
-import "dotenv/config";
+import { Client } from "@notionhq/client"
+import { loadStrategies } from "./lib/utils.js"
+import "dotenv/config"
 
 const notionClient = new Client({
   auth: process.env.NOTION_AUTH_TOKEN,
-});
+})
 
 const enabledScrapingStrategies =
-  process.env.ENABLED_SCRAPING_STRATEGIES.split(",");
+  process.env.ENABLED_SCRAPING_STRATEGIES.split(",")
 
-const loadedScrapingStrategies = await loadStrategies("scraping");
-const loadedNotificationStrategies = await loadStrategies("notification");
+const loadedScrapingStrategies = loadStrategies("scraping")
+const loadedNotificationStrategies = loadStrategies("notification")
 
 export const config = {
   queries: process.env.QUERIES.split(","),
   scrapingStrategies: loadedScrapingStrategies.filter((strategy) =>
-    enabledScrapingStrategies.includes(strategy.name)
+    enabledScrapingStrategies.includes(strategy.name),
   ),
   debug: process.env.DEBUG === "true",
   mode: "sequential",
@@ -56,4 +56,4 @@ export const config = {
       notionClient,
     },
   },
-};
+}

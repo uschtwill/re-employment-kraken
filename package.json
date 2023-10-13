@@ -16,7 +16,31 @@
     "axios": "^1.5.1",
     "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.3.1",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
     "node-notifier": "^10.0.1",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3"
+  },
+  "prettier": {
+    "semi": false
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es2021": true
+    },
+    "extends": [
+      "standard",
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "plugins": [
+        "jest"
+      ]
+    }
   }
 }
