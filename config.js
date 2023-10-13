@@ -9,8 +9,8 @@ const notionClient = new Client({
 const enabledScrapingStrategies =
   process.env.ENABLED_SCRAPING_STRATEGIES.split(",")
 
-const loadedScrapingStrategies = loadStrategies("scraping")
-const loadedNotificationStrategies = loadStrategies("notification")
+const loadedScrapingStrategies = await loadStrategies("scraping")
+const loadedNotificationStrategies = await loadStrategies("notification")
 
 export const config = {
   queries: process.env.QUERIES.split(","),

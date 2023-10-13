@@ -4,6 +4,10 @@
   "description": "",
   "main": "lib/index.js",
   "type": "module",
+  "engines": {
+    "node": "20.8.0",
+    "npm": "^10.1.0"
+  },
   "scripts": {
     "start": "node index.js",
     "dev": "./node_modules/.bin/nodemon index.js",
@@ -37,7 +41,8 @@
       "prettier"
     ],
     "parserOptions": {
-      "ecmaVersion": 12,
+      "ecmaVersion": "latest",
+      "sourceType": "module",
       "plugins": [
         "jest"
       ]
