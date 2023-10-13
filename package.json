@@ -42,10 +42,7 @@
     ],
     "parserOptions": {
       "ecmaVersion": "latest",
-      "sourceType": "module",
-      "plugins": [
-        "jest"
-      ]
+      "sourceType": "module"
     }
   }
 }
