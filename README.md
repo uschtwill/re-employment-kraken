@@ -1,6 +1,6 @@
 # 🐙 re-employment-kraken
 
-<img src="docs/images/dall-e-re-mployment-kraken.png" alt="dall-e vision of re-employment-kraken" width="350"/>
+<img src="docs/images/dall-e-re-mployment-kraken.png" alt="dall-e vision of re-employment-kraken" width="450"/>
 
 _Courtesy of Dall-E by OpenAI_ 😍
 
