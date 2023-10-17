@@ -1,5 +1,9 @@
 # 🐙 re-employment-kraken
 
+<img src="docs/images/dall-e-re-mployment-kraken.png" alt="dall-e vision of re-employment-kraken" width="350"/>
+
+_Courtesy of Dall-E by OpenAI_ 😍
+
 `re-employment-kraken` scrapes (job) sites, remembers what it saw and notifies downstream systems of any new sightings.
 
 ## Table of Content
