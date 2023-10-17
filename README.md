@@ -66,7 +66,7 @@ Of course you can use it to scrape other sites too, because your situation may b
 
 Actually though... you can use it to scrape anything!
 
-You've been bouncing between the same 6 sites for weeks to find a sweat deal for that new used car you've been eyeing? `re-employment-kraken` to the rescue! Want to be first in line, when a popular part is back in stock on one of your favourite bicycle supply sites? `re-employment-kraken` has your back!
+You've been bouncing between the same 6 sites for weeks to find a sweet deal for that new used car you've been eyeing? `re-employment-kraken` to the rescue! Want to be first in line, when a popular part is back in stock on one of your favourite bicycle supply sites? `re-employment-kraken` has your back!
 
 🐙
 
