@@ -25,7 +25,8 @@
     "eslint-config-standard": "^17.1.0",
     "node-notifier": "^10.0.1",
     "nodemon": "^3.0.1",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "telebot": "^1.4.1"
   },
   "prettier": {
     "semi": false

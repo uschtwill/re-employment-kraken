@@ -1,9 +1,14 @@
 import { Client } from "@notionhq/client"
 import { loadStrategies } from "./lib/utils.js"
+import TeleBot from 'telebot'
 import "dotenv/config"
 
 const notionClient = new Client({
   auth: process.env.NOTION_AUTH_TOKEN,
+})
+
+const telegramBotClient = new TeleBot({
+  token: process.env.TELEGRAM_BOT_TOKEN,
 })
 
 const enabledScrapingStrategies =
@@ -54,6 +59,11 @@ export const config = {
       enabled: process.env.NOTION_ENABLED === "true",
       boardId: process.env.NOTION_BOARD_ID,
       notionClient,
+    },
+    "telegram-bot": {
+      enabled: process.env.TELEGRAM_BOT_ENABLED === "true",
+      telegramUserId: process.env.TELEGRAM_USER_ID,
+      telegramBotClient,
     },
   },
 }
