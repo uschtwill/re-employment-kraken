@@ -37,6 +37,7 @@ _Courtesy of Dall-E by OpenAI_ 😍
   - `stdout`
   - Your Mac OS notification center
   - Slack
+  - Telegram chat with your bot
   - E-Mail _(not yet implemented, good first issue, see <https://github.com/uschtwill/re-employment-kraken/issues/3>)_
 - Creates cards on Kanban boards in:
   - Notion
@@ -148,6 +149,9 @@ The 'database' is just a collection of `.txt` files in the `./database/` directo
 
 See [this standalone document](docs/setting-up-notion-integration.md) for guidance on how to set up the Notion integration. If you want to customize your Notion integration (other properties etc), have a look at the [_"Links"_](#links) section below.
 
+### Setting up the Telegram Bot Integration
+See [the official Telegram documentation][telegram-bot-creation] on how to create a new bot via `BotFather`. Configure the token provided during bot creation in your `.env` file and set your Telegram user ID accordingly. If you don't know your user ID, send a message to `userinfobot`. Finally, start a chat with your newly created bot as users need to initiate bot contact before they can receive any messages. Note that the bot you created will not react to your messages. Instead, it will send you new projects that have been found while running this software.
+
 ## Known Issues
 
 ### Cloudflare Web Application Firewall (WAF)
@@ -183,6 +187,9 @@ In this case `re-employment-kraken` will only fetch the results from the first p
   - [Property values][notion-property-values]
   - [Retrieve a database (via the API; helpful to see properties)][notion-retrieve-database]
 
+- **Telegram Bot Docs**
+  - [Creating a Telegram bot][telegram-bot-creation]
+
 <!-- Other Links -->
 
 [cheerio]: https://github.com/cheeriojs/cheerio
@@ -193,6 +200,7 @@ In this case `re-employment-kraken` will only fetch the results from the first p
 [notion-database-properties]: https://developers.notion.com/reference/property-object
 [notion-property-values]: https://developers.notion.com/reference/property-value-object
 [notion-retrieve-database]: https://developers.notion.com/reference/retrieve-a-database
+[telegram-bot-creation]: https://core.telegram.org/bots/features#creating-a-new-bot
 
 <!-- Recruiter Links -->
 
