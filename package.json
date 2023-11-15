@@ -11,7 +11,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "./node_modules/.bin/nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
@@ -23,9 +23,11 @@
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard": "^17.1.0",
+    "joi": "^17.11.0",
     "node-notifier": "^10.0.1",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.3",
+    "sqlite3": "^5.1.6",
     "telebot": "^1.4.1"
   },
   "prettier": {
@@ -45,5 +47,8 @@
       "ecmaVersion": "latest",
       "sourceType": "module"
     }
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
   }
 }
