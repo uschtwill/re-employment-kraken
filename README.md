@@ -143,7 +143,7 @@ You'll figure it out. 😅
 
 ### Regarding Persistence/State
 
-The 'database' is just a collection of `.txt` files in the `./database/` directory in the repository root (one per strategy).
+SQLite is used to handle persistence and deduplication. A single database file named `re-employment-kraken.db` is written to the application's root directory when `DATABASE_ENALED` is active. If you want to preserve previously seen jobs, please keep this file intact and consider a backup strategy. However, if you want to have a fresh start, feel free to delete the file or turn `DATABASE_ENABLED` off. In the latter case, an in-memory SQLite instance will be used for deduplicating jobs during a single application run.
 
 ### Setting up the Notion Integration
 
