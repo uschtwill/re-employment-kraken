@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  re-employment-kraken:
+    image: re-employment-kraken:latest
+    container_name: re-employment-kraken
+    volumes:
+      - ./.env:/usr/src/app/.env:ro
+      - ./database/:/usr/src/app/database/

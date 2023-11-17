@@ -26,6 +26,7 @@ export const config = {
   mode: "sequential",
   database: {
     enabled: process.env.DATABASE_ENABLED === "true",
+    filePath: process.env.DATABASE_FILE_PATH,
   },
   fetchConfig: {
     headers: {
