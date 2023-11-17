@@ -15,7 +15,9 @@ _Courtesy of Dall-E by OpenAI_ 😍
   - [Usage](#usage)
     - [Getting Started](#getting-started)
     - [Writing Strategies](#writing-strategies)
-    - [Operations](#operations)
+    - [Running Natively](#running-natively)
+    - [Running with Docker](#running-with-docker)
+    - [Running Periodically](#running-periodically)
   - [Miscellaneous](#miscellaneous)
     - [Regarding Persistence/State](#regarding-persistencestate)
     - [Setting up the Notion Integration](#setting-up-the-notion-integration)
@@ -109,15 +111,42 @@ The CSS selector identifying one of these goes into the `getSingleResult` functi
 
 But just having a look at the [example](./lib/strategies/scraping/blueprint.example.js) and the [existing strategies](./lib/strategies/scraping/) should give you a good idea of what is possible and how to get started. Suffice to say, that these getters are just normal functions, so you can do pretty much anything in there.
 
-### Operations
+### Running Natively
 
-So how do you actually use it?
+So how do you actually use it? Assuming NodeJS is installed, you can simply execute:
 
 ```bash
 npm run
 ```
 
-This runs the scraper once and exits. To run it regularly (which makes it useful), create a `cron` job. You can also do this on your laptop.
+This runs the scraper once and exits. See [Running Periodically](#running-periodically) if you want to fetch more frequently.
+
+### Running with Docker
+
+When deploying the application to a server, using a container is preferable since it brings all the required dependencies and runs in isolation.
+For this purpose, you can find  `Dockerfile` and `compose.yml` in the repository.
+
+Assuming you are in the project's root repository and Docker is installed, you can build the container image like this:
+
+```bash
+docker build -t re-employment-kraken:latest .
+```
+
+In order to run the container successfully, you need to provide the following files as a volume:
+* **Required:** Your configuration file `.env`.
+* **Conditional:** The directory that contains your SQLite database file as specified in `DATABASE_FILE_PATH`. If you are starting with a fresh DB, the DB file does not need to exist yet. It will be created automatically. However, the target directory must be mounted to preserve the database between container runs.
+
+The easiest way to run the container is to use the included `compose.yml` file which assumes default paths. Otherwise, you can use the file as a template for configuring your volumes.
+
+```bash
+docker compose up re-employment-kraken
+```
+
+This runs the scraper once and exits. See [Running Periodically](#running-periodically) if you want to fetch more frequently.
+
+### Running Periodically
+
+To run the application regularly (which makes it useful), create a `cron` job. You can also do this on your laptop.
 
 Open your `crontab` with:
 
@@ -125,19 +154,26 @@ Open your `crontab` with:
 crontab -e
 ```
 
-Copy paste this in there, but change the path accordingly.
+Copy paste this in there, but change the path and cron expression as needed:
 
+*For running natively every hour:*
 ```bash
-* * * * * cd /absolute/path/to/the/directory && node index.js >> cron.log 2>&1
+0 * * * * cd /absolute/path/to/the/directory && node index.js >> cron.log 2>&1
 ```
 
-Quick explanation: `* * * * *` makes it run every minute, see [cron syntax][crontab-guru]. And `>> cron.log 2>&1` logs both `stdout` and `stderr` to the `cron.log` file.
+*For running with Docker every hour:*
+```bash
+0 * * * * cd /absolute/path/to/the/directory && docker compose up re-employment-kraken >> cron.log 2>&1
+```
+
+Quick explanation: `0 * * * *` makes it run every hour at minute zero, see [cron syntax][crontab-guru]. And `>> cron.log 2>&1` logs both `stdout` and `stderr` to the `cron.log` file. You can adapt the cron expression as needed. However, **be careful not to run it too frequently** as you might experience rate limiting or other blocking behavior otherwise.
 
 Being able to inspect the logs is nice, because honestly, you may have to fiddle a bit to get this line right - it really depends on your system. I may write a script that does this reliably at some point, but at the moment I don't even know if anyone will use this ever... so yeah.
 
 If the crontab user doesn't have `node` in it's path for instance, use `which node` to find the path to your node binary and substitute in the whole path in lieu of just `node` in the `crontab`.
 
 You'll figure it out. 😅
+
 
 ## Miscellaneous
 

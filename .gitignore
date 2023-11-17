@@ -5,3 +5,7 @@ database
 .linked-in-posts.md
 node_modules
 response.html
+.idea
+deploy.sh
+*.tar
+run.sh
