@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD033 -->
+
 # 🐙 re-employment-kraken
 
 <img src="docs/images/dall-e-re-mployment-kraken.png" alt="dall-e vision of re-employment-kraken" width="450"/>
@@ -21,6 +23,7 @@ _Courtesy of Dall-E by OpenAI_ 😍
   - [Miscellaneous](#miscellaneous)
     - [Regarding Persistence/State](#regarding-persistencestate)
     - [Setting up the Notion Integration](#setting-up-the-notion-integration)
+    - [Setting up the Telegram Bot Integration](#setting-up-the-telegram-bot-integration)
   - [Known Issues](#known-issues)
     - [Cloudflare Web Application Firewall (WAF)](#cloudflare-web-application-firewall-waf)
     - [Requires JS to Run](#requires-js-to-run)
@@ -133,8 +136,9 @@ docker build -t re-employment-kraken:latest .
 ```
 
 In order to run the container successfully, you need to provide the following files as a volume:
-* **Required:** Your configuration file `.env`.
-* **Conditional:** The directory that contains your SQLite database file as specified in `DATABASE_FILE_PATH`. If you are starting with a fresh DB, the DB file does not need to exist yet. It will be created automatically. However, the target directory must be mounted to preserve the database between container runs.
+
+- **Required:** Your configuration file `.env`.
+- **Conditional:** The directory that contains your SQLite database file as specified in `DATABASE_FILE_PATH`. If you are starting with a fresh DB, the DB file does not need to exist yet. It will be created automatically. However, the target directory must be mounted to preserve the database between container runs.
 
 The easiest way to run the container is to use the included `compose.yml` file which assumes default paths. Otherwise, you can use the file as a template for configuring your volumes.
 
@@ -157,11 +161,13 @@ crontab -e
 Copy paste this in there, but change the path and cron expression as needed:
 
 *For running natively every hour:*
+
 ```bash
 0 * * * * cd /absolute/path/to/the/directory && node index.js >> cron.log 2>&1
 ```
 
 *For running with Docker every hour:*
+
 ```bash
 0 * * * * cd /absolute/path/to/the/directory && docker compose up re-employment-kraken >> cron.log 2>&1
 ```
@@ -174,18 +180,18 @@ If the crontab user doesn't have `node` in it's path for instance, use `which no
 
 You'll figure it out. 😅
 
-
 ## Miscellaneous
 
 ### Regarding Persistence/State
 
-SQLite is used to handle persistence and deduplication. A single database file named `re-employment-kraken.db` is written to the application's root directory when `DATABASE_ENALED` is active. If you want to preserve previously seen jobs, please keep this file intact and consider a backup strategy. However, if you want to have a fresh start, feel free to delete the file or turn `DATABASE_ENABLED` off. In the latter case, an in-memory SQLite instance will be used for deduplicating jobs during a single application run.
+SQLite is used to handle persistence and deduplication. A single database file named `re-employment-kraken.db` is written to the application's root directory when `DATABASE_ENABLED` is active. If you want to preserve previously seen jobs, please keep this file intact and consider a backup strategy. However, if you want to have a fresh start, feel free to delete the file or turn `DATABASE_ENABLED` off. In the latter case, an in-memory SQLite instance will be used for deduplicating jobs during a single application run.
 
 ### Setting up the Notion Integration
 
 See [this standalone document](docs/setting-up-notion-integration.md) for guidance on how to set up the Notion integration. If you want to customize your Notion integration (other properties etc), have a look at the [_"Links"_](#links) section below.
 
 ### Setting up the Telegram Bot Integration
+
 See [the official Telegram documentation][telegram-bot-creation] on how to create a new bot via `BotFather`. Configure the token provided during bot creation in your `.env` file and set your Telegram user ID accordingly. If you don't know your user ID, send a message to `userinfobot`. Finally, start a chat with your newly created bot as users need to initiate bot contact before they can receive any messages. Note that the bot you created will not react to your messages. Instead, it will send you new projects that have been found while running this software.
 
 ## Known Issues
