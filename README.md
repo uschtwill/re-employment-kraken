@@ -119,7 +119,7 @@ But just having a look at the [example](./lib/strategies/scraping/blueprint.exam
 So how do you actually use it? Assuming NodeJS is installed, you can simply execute:
 
 ```bash
-npm run
+npm start
 ```
 
 This runs the scraper once and exits. See [Running Periodically](#running-periodically) if you want to fetch more frequently.
