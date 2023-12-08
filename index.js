@@ -17,16 +17,18 @@ const scrape = async (config) => {
   }
 }
 
+// This generic unhandled promise rejection handler is intended for debugging purposes. As an example, we have occasionally seen
+// 'too many requests' errors that need to be investigated.
 process.on('unhandledRejection', (reason) => {
   console.error('An unhandled Promise rejection occurred:', reason)
 })
 
 try {
   // In case the database flag is turned off, we fall back to an in-memory DB for temporary deduplication.
-  await initDB(config.database.enabled ? config.database.filePath : DB_IN_MEMORY)
+  initDB(config.database.enabled ? config.database.filePath : DB_IN_MEMORY)
   await scrape(config)
 } catch (err) {
   console.error(`An unexpected error occurred: ${err.message}`)
 } finally {
-  await closeDB()
+  closeDB()
 }
